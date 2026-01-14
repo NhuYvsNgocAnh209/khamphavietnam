@@ -1,0 +1,484 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link href="index (10).css" type="text/css" rel="stylesheet">
+</head>
+	<script>
+var i = 0;
+var images = ["image/z3898777484085_f2d1801388692a53d53a737679311be2.jpg", "image/09131449-danh-lam-thang-canh-viet-nam.jpeg" , "image/09131449-danh-lam-thang-canh-viet-nam.jpeg"];
+
+setInterval(function(){
+  document.getElementById("slide").src = images[i];
+  i++;
+  if(i >= images.length){
+    i = 0;
+  }
+}, 5000); // 2000 = 2 giây đổi ảnh
+</script>
+	
+	<script>
+const images = [
+    "image/OIP (3) - Sao chép.png",
+    "image/OIP (2) - Sao chép.png",
+    "image/OIP (1) - Sao chép.png",
+   
+];
+
+let currentIndex = 0;
+const sliderImage = document.getElementById("sliderImage");
+
+function showImage(index) {
+    sliderImage.src = images[index];
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+}
+</script>
+<script>
+function toggleChat() {
+    const chatBox = document.getElementById("chatBox");
+    chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+}
+</script>
+<script>
+        window.onscroll = function() {
+            const topButton = document.getElementById("topButton");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topButton.style.display = "block";
+            } else { 
+                topButton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+	</script>
+	<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    #sideMenu {
+        position: fixed;
+        top: 0;
+        left: -200px; /* Ẩn bên trái */
+        width: 200px;
+        height: 100%;
+        background: #333;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+    }
+    #sideMenu a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+    #sideMenu a:hover {
+        background: #555;
+    }
+    #openBtn {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: #007BFF;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    let isOpen = false;
+    $("#openBtn").click(function(){
+        if(!isOpen){
+            $("#sideMenu").animate({left: "0px"}, 300);
+        } else {
+            $("#sideMenu").animate({left: "-200px"}, 300);
+        }
+        isOpen = !isOpen;
+    });
+});
+</script>
+
+<body>
+
+
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Tự động chạy
+  setInterval(nextSlide, 5000); // 5 giây
+</script>
+<section class="hero-slider">
+  <div class="slider">
+  <img id="slide" src="image/Trang_An_Boat_Trip.jpg">
+</div>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Du Lịch Việt Nam</h1>
+    <p>Chia sẻ địa điểm – kinh nghiệm – hành trình</p>
+  </div>
+
+</section>
+	<button id="openBtn">☰ Menu</button>
+<div id="sideMenu">
+    <a href="#">Trang chủ</a>
+    <a href="#">Giới thiệu</a>
+    <a href="#">Dịch vụ</a>
+    <a href="#">Liên hệ</a>
+</div>
+	
+		
+<div class="top-bar"><img src="image/file_00000000777c7209ad38d6f832824c70-removebg-preview.png" width="60" height="59" alt=""/>
+    <div class="top-left">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Tìm kiếm mọi thứ...">
+            <span class="key">⌘</span>
+            <span class="key">K</span>
+        </div>
+    </div>
+    
+<div class="top-right">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Profile</a>
+        <a href="#">Loyalty</a>
+        <a href="#">Liên hệ</a>
+		<a href="Dangki.html">Đăng ký</a>
+        <span class="hotline">Hotline: <strong>1900.9165</strong></span>
+    </div>
+</div>
+    
+</header>
+
+<nav class="main-menu">
+     <a href="index.html">Trang chủ</a>
+    <a href="index (3).html">Miền Bắc</a>
+    <a href="index (5).html">Miền Trung</a>
+    <a href="index (4).html">Miền Nam</a>
+    <a href="index (6).html">Phú Quốc</a>
+	<a href="index (8).html">Dịch vụ</a>
+</nav>
+
+<div class="container main-content">
+
+    <section class="posts">
+
+<h1 class="title">DU LỊCH TRONG NƯỚC</h1>
+<p class="desc">
+    Du lịch trong nước luôn là lựa chọn tuyệt vời với bờ biển dài,
+    thiên nhiên phong phú và nhiều danh thắng nổi tiếng.
+</p>
+
+<div class="container">
+    <!-- FILTER -->
+    <aside class="filter">
+        <h3>BỘ LỌC TÌM KIẾM</h3>
+
+        <label>Ngân sách</label>
+        <div class="filter-box">
+            <button>Dưới 5 triệu</button>
+            <button>5 - 10 triệu</button>
+            <button>10 - 20 triệu</button>
+            <button>Trên 20 triệu</button>
+        </div>
+
+        <label>Điểm khởi hành</label>
+        <select>
+            <option>Tất cả</option>
+            <option>Hà Nội</option>
+            <option>Vinh</option>
+        </select>
+
+        <label>Ngày đi</label>
+        <input type="date">
+
+        <button class="apply">Áp dụng</button>
+    </aside>
+
+    <!-- TOUR LIST -->
+    <main class="tour-list">
+
+        <div class="tour-item">
+            <img src="../doi-che-thanh-chuong.jpg" alt="" width="261" height="358">
+            <div class="tour-info">
+              <h3>Vinh - KĐT Kim Liên - Đồi Chè Thanh Chương</h3>
+
+                <p>🆔 Mã tour: NDNAN001</p>
+                <p>⏱ Thời gian: Trong ngày</p>
+                <p>🚍 Phương tiện: Xe</p>
+                <p>📍 Khởi hành: Vinh</p>
+
+                <div class="dates">
+                    <span>31/01</span>
+                    <span>07/02</span>
+                    <span>21/02</span>
+                </div>
+
+                <div class="price-row">
+                    <span class="price">750.000 đ</span>
+                 <button class="add-cart"
+        data-id="1"
+        data-name="Vinh - Đồi Chè Thanh Chương"
+        data-price="750000"
+        data-img="images/tour1.jpg">
+        <a href="index (12).html" style="color: hsla(0,0%,100%,1)">Thêm vào giỏ</a>
+    </button>
+                </div>
+          </div>
+      </div>
+
+        <!-- TOUR ITEM -->
+        <div class="tour-item">
+            <img src="../rung-thong-ban-ang-moc-chau-dia-diem-dep-nhu-phim-giua-long-tay-bac-02.png" alt="" width="261" height="358">
+            <div class="tour-info">
+                <h3>Mộc Châu - Nông Trường Chè - Rừng Thông Bản Áng</h3>
+                <p>🆔 Mã tour: NDHAN120</p>
+                <p>⏱ Thời gian: 2N1Đ</p>
+                <p>🚍 Phương tiện: Xe</p>
+
+                <div class="price-row">
+                    <span class="price">1.990.000 đ</span>
+                    
+                     <button class="add-cart"
+        data-id="1"
+        data-name="Vinh - Đồi Chè Thanh Chương"
+        data-price="750000"
+        data-img="images/tour1.jpg">
+        <a href="index (11).css" style="color: hsla(0,0%,100%,1)">Thêm vào giỏ</a>
+    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>
+
+      <footer class="footer">
+        <div class="footer-container">
+
+    <!-- CỘT 1 -->
+    <div class="footer-col">
+      <img src="image/file_00000000777c7209ad38d6f832824c70-removebg-preview.png" class="logo">
+      <p>📍 Đảo Hòn Tre, Nha Trang, Khánh Hoà, Việt Nam</p>
+      <p>✉ we-care@vinwonders.com</p>
+      <p>📞 Hotline: 1900 6677</p>
+
+      <div class="social">
+        <img src="image/OIP (7).png" alt=""/> </div>
+    </div>
+
+    <!-- CỘT 2 -->
+    <div class="footer-col">
+      <h4>GIỚI THIỆU</h4>
+      <a href="#">Về chúng tôi</a>
+      <a href="#">Thành tựu</a>
+      <a href="#">Liên hệ</a>
+      <a href="#">Câu hỏi thường gặp</a>
+      <a href="#">Bản đồ</a>
+      <a href="#">Tuyển dụng</a>
+
+      <h4>ĐIỀU KHOẢN & QUY ĐỊNH</h4>
+    </div>
+
+    <!-- CỘT 3 -->
+    <div class="footer-col">
+      <h4>WONDERPEDIA</h4>
+      <a href="#">WonderNews</a>
+      <a href="#">Khám phá Phú Quốc</a>
+      <a href="#">Khám phá Nha Trang</a>
+      <a href="#">Khám phá Hội An – Đà Nẵng</a>
+      <a href="#">Khám phá Hà Nội</a>
+
+      <h4>THƯ VIỆN ẢNH</h4>
+    </div>
+
+    <!-- CỘT 4 -->
+    <div class="footer-col">
+      <h4>Website chính thức của VinWonders</h4>
+      <p>Số ĐKKD: 4200456848 – 26/7/2006</p>
+
+      <h4>Nơi cấp</h4>
+      <p>Sở KH & ĐT Khánh Hoà</p>
+
+      <h4>Lĩnh vực kinh doanh</h4>
+      <p>Dịch vụ lưu trú, vui chơi giải trí, bảo tồn thiên nhiên</p>
+
+      <h4>Chủ tài khoản</h4>
+      <p>Công ty CP Vinpearl</p>
+
+      <h4>Tài khoản ngân hàng</h4>
+      <p>Techcombank – Hội sở</p>
+    </div>
+
+  </div>
+
+  <!-- ĐĂNG KÝ EMAIL -->
+  <div class="subscribe">
+    <input type="email" placeholder="Nhập email của quý khách tại đây">
+    <button>Theo dõi</button>
+  </div>
+</footer>
+
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="widget">
+            <h3>Danh mục</h3>
+            <ul>
+                <li><a href="#">Du lịch Miền Bắc</a></li>
+                <li><a href="#">Du lịch Miền Trung</a></li>
+                <li><a href="#">Du lịch Miền Nam</a></li>
+                <li><a href="#">Kinh nghiệm du lịch</a></li>
+            </ul>
+        </div>
+
+        <div class="widget">
+            <h3>Bài viết nổi bật</h3>
+            <ul>
+                <li><a href="#">Đà Nẵng có gì chơi?</a></li>
+                <li><a href="#">Kinh nghiệm đi Sapa</a></li>
+                <li><a href="#">Top biển đẹp Việt Nam</a></li>
+            </ul>
+        </div>
+
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+    <p>© 2026 Blog Du Lịch Việt Nam | Thiết kế cho Adobe Dreamweaver</p>
+	| Thiết kế :  Trương Thị Ngọc Ánh & Trịnh Như Ý       | Số liên hệ : 0884183976
+</footer>
+	<button id="topButton" onClick="scrollToTop()">Về Đầu</button>
+	<div class="chat-button" onclick="toggleChat()">
+    💬
+</div>
+
+<!-- CHAT BOX -->
+<div class="chat-box" id="chatBox">
+    <div class="chat-header">
+        <span>CSKH Nụ Cười Mê Kông</span>
+        <button onclick="toggleChat()">✕</button>
+    </div>
+
+    <div class="chat-welcome">
+        Xin chào quý khách. Rất vinh dự được phục vụ quý khách!
+    </div>
+
+    <form class="chat-form">
+        <label>Họ và Tên <span>*</span></label>
+        <input type="text" placeholder="Nhập tên của bạn" required>
+
+        <label>Số điện thoại <span>*</span></label>
+        <input type="tel" placeholder="Nhập số điện thoại của bạn" required>
+
+        <button type="submit">Bắt đầu chat</button>
+    </form>
+	<script>
+const cartBody = document.getElementById("cart-body");
+const cartCount = document.getElementById("cart-count");
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Render cart
+function renderCart() {
+    cartBody.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartBody.innerHTML = `<p class="empty-cart">Giỏ hàng trống</p>`;
+        cartCount.innerText = 0;
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        cartBody.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.img}">
+                <div>
+                    <p>${item.name}</p>
+                    <span>${item.price.toLocaleString()} đ</span>
+                    <br>
+                    <button onclick="removeItem(${index})">Xóa</button>
+                </div>
+            </div>
+        `;
+    });
+
+    cartCount.innerText = cart.length;
+}
+
+// Add to cart
+document.querySelectorAll(".add-cart").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const item = {
+            id: btn.dataset.id,
+            name: btn.dataset.name,
+            price: Number(btn.dataset.price),
+            img: btn.dataset.img
+        };
+
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+    });
+});
+
+// Remove item
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+}
+
+// Init
+renderCart();
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link href="index (11).css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+	<h2 style="text-align:center;color:#1dbf73">THANH TOÁN TOUR</h2>
+
+<div class="checkout">
+    <div class="checkout-left">
+        <h3>Thông tin khách hàng</h3>
+
+        <input type="text" placeholder="Họ và tên">
+        <input type="text" placeholder="Số điện thoại">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Ghi chú"></textarea>
+
+        <button class="pay-btn">Xác nhận đặt tour</button>
+    </div>
+
+    <div class="checkout-right">
+        <h3>Tour đã chọn</h3>
+        <h3>Mộc Châu - Nông Trường Chè - Rừng Thông Bản Áng</h3>
+        <h4>Tổng tiền: <span id="checkout-total">1.990.000 đ</span></h4>
+    </div>
+</div>
+
+<script>
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartBox = document.getElementById("checkout-cart");
+const totalEl = document.getElementById("checkout-total");
+
+let total = 0;
+
+if (cart.length === 0) {
+    cartBox.innerHTML = "<p>Không có tour nào</p>";
+} else {
+    cart.forEach(item => {
+        total += item.price;
+        cartBox.innerHTML += `
+            <p>${item.name} - <strong>${item.price.toLocaleString()} đ</strong></p>
+        `;
+    });
+}
+
+totalEl.innerText = total.toLocaleString() + " đ";
+</script>
+
+	
+</body>
+</html>

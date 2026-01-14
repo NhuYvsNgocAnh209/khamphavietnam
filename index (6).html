@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link href="index (3).css" type="text/css" rel="stylesheet">
+</head>
+	<script>
+var i = 0;
+var images = ["image/z3898777484085_f2d1801388692a53d53a737679311be2.jpg", "image/09131449-danh-lam-thang-canh-viet-nam.jpeg" , "image/09131449-danh-lam-thang-canh-viet-nam.jpeg"];
+
+setInterval(function(){
+  document.getElementById("slide").src = images[i];
+  i++;
+  if(i >= images.length){
+    i = 0;
+  }
+}, 5000); // 2000 = 2 giây đổi ảnh
+</script>
+	
+	<script>
+const images = [
+    "image/OIP (3) - Sao chép.png",
+    "image/OIP (2) - Sao chép.png",
+    "image/OIP (1) - Sao chép.png",
+   
+];
+
+let currentIndex = 0;
+const sliderImage = document.getElementById("sliderImage");
+
+function showImage(index) {
+    sliderImage.src = images[index];
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+}
+</script>
+<script>
+function toggleChat() {
+    const chatBox = document.getElementById("chatBox");
+    chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+}
+</script>
+<script>
+        window.onscroll = function() {
+            const topButton = document.getElementById("topButton");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topButton.style.display = "block";
+            } else { 
+                topButton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+	</script>
+	<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    #sideMenu {
+        position: fixed;
+        top: 0;
+        left: -200px; /* Ẩn bên trái */
+        width: 200px;
+        height: 100%;
+        background: #333;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+    }
+    #sideMenu a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+    #sideMenu a:hover {
+        background: #555;
+    }
+    #openBtn {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: #007BFF;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    let isOpen = false;
+    $("#openBtn").click(function(){
+        if(!isOpen){
+            $("#sideMenu").animate({left: "0px"}, 300);
+        } else {
+            $("#sideMenu").animate({left: "-200px"}, 300);
+        }
+        isOpen = !isOpen;
+    });
+});
+</script>
+
+<body>
+
+
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Tự động chạy
+  setInterval(nextSlide, 5000); // 5 giây
+</script>
+<section class="hero-slider">
+  <div class="slider">
+  <img id="slide" src="image/Trang_An_Boat_Trip.jpg">
+</div>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Du Lịch Việt Nam</h1>
+    <p>Chia sẻ địa điểm – kinh nghiệm – hành trình</p>
+  </div>
+
+</section>
+	<button id="openBtn">☰ Menu</button>
+<div id="sideMenu">
+    <a href="#">Trang chủ</a>
+    <a href="#">Giới thiệu</a>
+    <a href="#">Dịch vụ</a>
+    <a href="#">Liên hệ</a>
+</div>
+	
+		
+<div class="top-bar"><img src="image/file_00000000777c7209ad38d6f832824c70-removebg-preview.png" width="60" height="59" alt=""/>
+    <div class="top-left">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Tìm kiếm mọi thứ...">
+            <span class="key">⌘</span>
+            <span class="key">K</span>
+        </div>
+    </div>
+    
+<div class="top-right">
+       <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Profile</a>
+        <a href="#">Loyalty</a>
+        <a href="#">Liên hệ</a>
+		<a href="index (7).html">Đăng ký</a>
+        <span class="hotline">Hotline: <strong>1900.9165</strong></span>
+    </div>
+</div>
+    
+</header>
+
+<nav class="main-menu">
+     <a href="index.html">Trang chủ</a>
+    <a href="index (3).html">Miền Bắc</a>
+    <a href="index (5).html">Miền Trung</a>
+    <a href="index (4).html">Miền Nam</a>
+    <a href="index (6).html">Phú Quốc</a>
+	<a href="index (8).html">Dịch vụ</a>
+	
+</nav>
+
+<div class="container main-content">
+
+    <section class="posts">
+
+        <article class="post">
+            <h2>NHỮNG ĐỊA ĐIỂM LÊN GHÉ QUA TẠI PHÚ QUỐC</h2>
+			<h2>2.1 Hòn Thơm</h2>
+            <p></p>
+<p class="post-meta">📅 2026 | ✍ Admin</p>
+            <p> Địa chỉ: Quần đảo An Thới, Phú Quốc </p>
+          <p>Giá vé: 350.000 – 650.000 VNĐ/vé (trẻ em dưới 1m được miễn phí hoàn toàn) </p>
+            <p>Giờ mở cửa: 7h30 – 19h </p>
+<p><img src="../hon_thom_phu_quoc_du_lich_thu_duc.jpg" width="702" height="402" alt=""/></p>
+			<p> Đây là hòn đảo lớn nhất trong quần đảo An Thới phía Nam đảo. Nơi đây ghi điểm trong mắt du khách bởi vẻ đẹp thiên nhiên hoang sơ, tươi đẹp. Đến với hòn Thơm, bạn sẽ bắt gặp những rặng dừa xanh rì. Hay những bờ biển cát trắng, nước trong xanh. Đặc biệt, điểm thú vị nhất khi du lịch hòn Thơm chính là khu cáp treo mang kiến trúc Hy Lạp – La Mã. &nbsp; </p>
+<a class="read-more" href="#">Đọc tiếp →&nbsp;</a>
+        </article>
+
+      <article class="post">
+            <h2>&nbsp;2.2 Công viên VinWonders Phú Quốc</h2>
+            <p class="post-meta">📅 2026 | ✍ Admin</p>
+          <p class="post-meta">Địa chỉ: Khu Bãi Dài, xã Gành Dầu, Đảo Phú Quốc </p>
+          <p class="post-meta">Giá vé: Người lớn: 750.000 VNĐ/vé Trẻ em cao từ 1m đến dưới 1m4: 500.000 VNĐ/vé Trẻ em dưới 1m: Miễn phí </p>
+        <p class="post-meta">Giờ mở cửa: 9h – 19h30 </p>
+<p></p>
+<p><img src="../VinWonders-phu-quoc-3.jpg" width="752" height="402" alt=""/></p>
+		  <p> VinWonders Phú Quốc nằm trong quần thể Phu Quoc United Center. Với diện tích rộng tới 50ha, VinWonders là công viên chủ đề lớn nhất Việt Nam. Tại đây được chia thành 6 phân khu. Bao gồm: Đại lộ Châu u, Thế giới lốc xoáy, Thế giới diệu kỳ, Cung điện Hải Vương, Khu làng bí mật và Thế giới phiêu lưu. &nbsp; </p>
+<a class="read-more" href="#">Đọc tiếp →</a>
+        </article>
+
+      <article class="post">
+            <h2>2.3 Grand World Phú Quốc</h2>
+        <p class="post-meta">📅 2026 | ✍ Admin</p>
+          <p>
+        Địa chỉ: Bãi Dài, Gành Dầu, Phú Quốc</p>
+          <p> Giá vé: 150.000 – 450.000 VNĐ/vé</p>
+          <p> Giờ mở cửa: 6h – 23h10 </p>
+            <p><img src="image/Ảnh chụp màn hình 2026-01-06 133855.png" width="702" height="402" alt=""/></p>
+		  <p>Grand World nằm ở phía Bắc đảo Phú Quốc, thuộc tổ hợp Phú Quốc United Center nổi tiếng. Nơi đây cách trung tâm Dương Đông khoảng 25km và cách sân bay quốc tế Phú Quốc gần 30km, rất dễ di chuyển bằng nhiều phương tiện. Với vị trí thuận tiện như vậy, bạn hoàn toàn có thể lên đường từ sáng sớm để kịp có mặt tại Grand World và bắt đầu ngày khám phá. </p>
+          <a class="read-more" href="#">Đọc tiếp →</a>
+        </article>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- CỘT 1 -->
+    <div class="footer-col">
+      <img src="image/file_00000000777c7209ad38d6f832824c70-removebg-preview.png" class="logo">
+      <p>📍 Đảo Hòn Tre, Nha Trang, Khánh Hoà, Việt Nam</p>
+      <p>✉ we-care@vinwonders.com</p>
+      <p>📞 Hotline: 1900 6677</p>
+
+      <div class="social">
+        <img src="image/OIP (7).png" alt=""/> </div>
+    </div>
+
+    <!-- CỘT 2 -->
+    <div class="footer-col">
+      <h4>GIỚI THIỆU</h4>
+      <a href="#">Về chúng tôi</a>
+      <a href="#">Thành tựu</a>
+      <a href="#">Liên hệ</a>
+      <a href="#">Câu hỏi thường gặp</a>
+      <a href="#">Bản đồ</a>
+      <a href="#">Tuyển dụng</a>
+
+      <h4>ĐIỀU KHOẢN & QUY ĐỊNH</h4>
+    </div>
+
+    <!-- CỘT 3 -->
+    <div class="footer-col">
+      <h4>WONDERPEDIA</h4>
+      <a href="#">WonderNews</a>
+      <a href="#">Khám phá Phú Quốc</a>
+      <a href="#">Khám phá Nha Trang</a>
+      <a href="#">Khám phá Hội An – Đà Nẵng</a>
+      <a href="#">Khám phá Hà Nội</a>
+
+      <h4>THƯ VIỆN ẢNH</h4>
+    </div>
+
+    <!-- CỘT 4 -->
+    <div class="footer-col">
+      <h4>Website chính thức của VinWonders</h4>
+      <p>Số ĐKKD: 4200456848 – 26/7/2006</p>
+
+      <h4>Nơi cấp</h4>
+      <p>Sở KH & ĐT Khánh Hoà</p>
+
+      <h4>Lĩnh vực kinh doanh</h4>
+      <p>Dịch vụ lưu trú, vui chơi giải trí, bảo tồn thiên nhiên</p>
+
+      <h4>Chủ tài khoản</h4>
+      <p>Công ty CP Vinpearl</p>
+
+      <h4>Tài khoản ngân hàng</h4>
+      <p>Techcombank – Hội sở</p>
+    </div>
+
+  </div>
+
+  <!-- ĐĂNG KÝ EMAIL -->
+  <div class="subscribe">
+    <input type="email" placeholder="Nhập email của quý khách tại đây">
+    <button>Theo dõi</button>
+  </div>
+</footer>
+
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="widget">
+        <h3>Danh mục</h3>
+        <ul>
+          <li><a href="#">Du lịch Miền Bắc</a></li>
+                <li><a href="#">Du lịch Miền Trung</a></li>
+                <li><a href="#">Du lịch Miền Nam</a></li>
+                <li><a href="#">Kinh nghiệm du lịch</a></li>
+        </ul>
+      </div>
+
+        <div class="widget">
+            <h3>Bài viết nổi bật</h3>
+            <ul>
+                <li><a href="#">Đà Nẵng có gì chơi?</a></li>
+                <li><a href="#">Kinh nghiệm đi Sapa</a></li>
+                <li><a href="#">Top biển đẹp Việt Nam</a></li>
+          </ul>
+      </div>
+
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+    <p>© 2026 Blog Du Lịch Việt Nam | Thiết kế cho Adobe Dreamweaver</p>
+	| Thiết kế :  Trương Thị Ngọc Ánh & Trịnh Như Ý       | Số liên hệ : 0884183976
+</footer>
+	<button id="topButton" onClick="scrollToTop()">Về Đầu</button>
+	<div class="chat-button" onclick="toggleChat()">
+    💬
+</div>
+
+<!-- CHAT BOX -->
+<div class="chat-box" id="chatBox">
+    <div class="chat-header">
+        <span>CSKH Nụ Cười Mê Kông</span>
+        <button onclick="toggleChat()">✕</button>
+    </div>
+
+    <div class="chat-welcome">
+        Xin chào quý khách. Rất vinh dự được phục vụ quý khách!
+    </div>
+
+    <form class="chat-form">
+        <label>Họ và Tên <span>*</span></label>
+        <input type="text" placeholder="Nhập tên của bạn" required>
+
+        <label>Số điện thoại <span>*</span></label>
+        <input type="tel" placeholder="Nhập số điện thoại của bạn" required>
+
+        <button type="submit">Bắt đầu chat</button>
+    </form>
+</div>
+</body>
+</html>

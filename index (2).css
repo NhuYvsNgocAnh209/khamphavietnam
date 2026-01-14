@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: #f5f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.auth-container {
+    width: 420px;
+}
+
+/* Box */
+.auth-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.vinpearl {
+    color: #1c4e89;
+    font-size: 20px;
+}
+
+.vinclub {
+    color: #caa349;
+    font-size: 20px;
+}
+
+.divider {
+    margin: 0 10px;
+    color: #ccc;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #999;
+    font-weight: 500;
+}
+
+.tab.active {
+    color: #caa349;
+    border-bottom: 2px solid #caa349;
+}
+
+/* Form */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #caa349;
+}
+
+/* Button */
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: #caa349;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background: #b8923d;
+}
+
+/* Footer */
+.footer-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.footer-text a {
+    color: #1c4e89;
+    text-decoration: none;
+}

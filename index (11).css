@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+.checkout {
+    max-width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    gap: 20px;
+}
+
+.checkout-left, .checkout-right {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.checkout-left input,
+.checkout-left textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.pay-btn {
+    width: 100%;
+    background: #1dbf73;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
