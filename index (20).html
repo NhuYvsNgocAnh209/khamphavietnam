@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Liên hệ - Du Lịch Việt Nam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a5f49",
+                        secondary: "#007bff",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-200">
+<div class="bg-white dark:bg-slate-900 border-b dark:border-slate-800 py-3 px-4 lg:px-20 hidden md:block">
+<div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<span class="font-semibold text-primary">1900.9165</span>
+</div>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<span class="text-slate-600 dark:text-slate-400">info@dulichvietnam.vn</span>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<a class="hover:text-primary transition-colors" href="#">Đăng ký</a>
+<span class="text-slate-300">|</span>
+<a class="hover:text-primary transition-colors" href="#">Đăng nhập</a>
+<button class="ml-4 p-1 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-xl dark:text-yellow-400">light_mode</span>
+</button>
+</div>
+</div>
+</div>
+<nav class="bg-primary sticky top-0 z-50 shadow-md">
+<div class="max-w-7xl mx-auto px-4 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-8">
+<a class="text-white font-bold text-xl flex items-center gap-2" href="#">
+	<img src="image_logo.png" width="60" height="59" alt=""/>
+<span class="material-symbols-outlined">travel_explore</span>
+                        NHUYNGOCANH
+                    </a>
+<div class="hidden lg:flex space-x-6 text-white font-medium uppercase text-sm">
+<a class="hover:opacity-80 transition-opacity" href="index.html">Trang chủ</a>
+<a class="hover:opacity-80 transition-opacity" href="index (16).html">Giới thiệu</a>
+<a class="hover:opacity-80 transition-opacity" href="index (3).html">Miền Bắc</a>
+<a class="hover:opacity-80 transition-opacity" href="index (5).html">Miền Tây</a>
+<a class="hover:opacity-80 transition-opacity" href="index (4).html">Miền Nam</a>
+<a class="hover:opacity-80 transition-opacity" href="index (6).html">Phú Quốc</a>
+<a class="border-b-2 border-white pb-1" href="index (20).html">Liên hệ</a>
+</div>
+</div>
+<div class="flex items-center">
+<div class="relative flex items-center bg-white dark:bg-slate-800 rounded-full px-4 py-1.5 overflow-hidden">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-slate-700 dark:text-slate-200" placeholder="Tìm kiếm địa điểm..." type="text"/>
+<button class="bg-secondary text-white px-3 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors ml-2">Tìm</button>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-4 py-12 lg:px-8">
+<div class="mb-12">
+<h1 class="text-4xl font-bold text-primary mb-4">Liên hệ với chúng tôi</h1>
+<p class="text-slate-600 dark:text-slate-400">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn trong mọi hành trình.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-800">
+<form action="#" class="space-y-6" method="POST">
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="fullname">Họ và tên</label>
+<input class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary transition-all" id="fullname" placeholder="Nhập họ và tên của bạn" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="email">Email</label>
+<input class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary transition-all" id="email" placeholder="example@gmail.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="phone">Số điện thoại</label>
+<input class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary transition-all" id="phone" placeholder="0xxx xxx xxx" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="message">Lời nhắn</label>
+<textarea class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-primary transition-all" id="message" placeholder="Để lại lời nhắn cho chúng tôi..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-emerald-900 transition-colors shadow-lg flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">send</span>
+                        Gửi tin nhắn
+                    </button>
+</form>
+</div>
+<div class="space-y-8">
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Địa chỉ</h4>
+<p class="text-slate-600 dark:text-slate-400">123 Đường Nguyễn Huệ, Quận 1, TP. HCM</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">call</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Số điện thoại</h4>
+<p class="text-slate-600 dark:text-slate-400">1900.9165</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Email</h4>
+<p class="text-slate-600 dark:text-slate-400">info@dulichvietnam.vn</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+<h3 class="font-bold text-xl mb-4">Tại sao chọn chúng tôi?</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Hỗ trợ tư vấn tour 24/7
+                        </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Cam kết giá tốt nhất thị trường
+                        </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Đội ngũ hướng dẫn viên giàu kinh nghiệm
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-16 w-full h-[450px] rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
+<iframe allowfullscreen="" class="w-full h-full grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.424167419762!2d106.7017555!3d10.7753382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f47051786c1%3A0x7d287611a5611099!2zMTIzIMSQxrDhu51uZyBOZ3V54buFbiBIdeG7hywgQuG6v24gTmdow6ksIFF14bqtbiAxLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1715421234567!5m2!1svi!2s"></iframe>
+</div>
+</main>
+<footer class="bg-slate-900 text-slate-400 py-16 px-4">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<a class="text-white font-bold text-2xl flex items-center gap-2 mb-6" href="#">
+<span class="material-symbols-outlined text-primary">travel_explore</span>
+                    VIETNAM TRAVEL
+                </a>
+<p class="text-sm leading-relaxed mb-6">Chuyên trang cung cấp thông tin du lịch hàng đầu Việt Nam. Khám phá vẻ đẹp tiềm ẩn của quốc gia chúng ta cùng với những chuyên gia lữ hành tận tâm.</p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">social_leaderboard</span></a>
+<a class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+<a class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">videocam</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase tracking-wider">Thông tin</h4>
+<ul class="space-y-3 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Điều khoản sử dụng</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Câu hỏi thường gặp</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase tracking-wider">Điểm đến HOT</h4>
+<ul class="space-y-3 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Vịnh Hạ Long</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Phố cổ Hội An</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Đảo Phú Quốc</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sa Pa</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase tracking-wider">Liên hệ</h4>
+<ul class="space-y-4 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-base">call</span>
+<span>Hotline: 1900.9165</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-base">email</span>
+<span>info@dulichvietnam.vn</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-base">push_pin</span>
+<span>Quận 1, TP. Hồ Chí Minh</span>
+</li>
+</ul>
+</div>
+</div>
+<footer style="background:#111; color:#fff; text-align:center; padding:15px 10px; font-size:14px;">
+  © 2026 <strong>Blog DU LỊCH VIỆT NAM</strong><br>
+  Thiết kế : <strong>Lã Hồng Hải</strong> &amp; <strong>Trần Tuấn Anh</strong>
+</footer>
+</footer>
+<div class="fixed bottom-6 right-6 z-50">
+<button class="w-14 h-14 bg-green-500 text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</button>
+</div>
+
+</body></html>

@@ -147,7 +147,7 @@ $(document).ready(function(){
 </script>
 <section class="hero-slider">
   <div class="slider">
-  <img id="slide" src="image/Trang_An_Boat_Trip.jpg">
+  <img id="slide" src="image_thanh.jpg">
 </div>
 
   <div class="overlay"></div>
@@ -170,19 +170,17 @@ $(document).ready(function(){
 <div class="top-bar"><img src="image_logo.png" width="60" height="59" alt=""/>
     <div class="top-left">
         <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Tìm kiếm mọi thứ...">
-            <span class="key">⌘</span>
-            <span class="key">K</span>
-        </div>
+  <input type="text" id="searchInput" placeholder="Tìm kiếm Khu du lịch...">
+  <button onclick="searchText()">Tìm</button>
+</div>
     </div>
     
 <div class="top-right">
        <a href="#">Trang chủ</a>
-        <a href="#">Giới thiệu</a>
+       <a href="index (16).html">GIỚI THIỆU</a>
         <a href="#">Profile</a>
-        <a href="#">Loyalty</a>
-        <a href="#">Liên hệ</a>
+        <a href="index (8).html">Dịch vụ</a>
+        <a href="index (20).html">Liên hệ</a>
 		<a href="index (7).html">Đăng ký</a>
         <span class="hotline">Hotline: <strong>1900.9165</strong></span>
     </div>
@@ -192,14 +190,14 @@ $(document).ready(function(){
 
 <nav class="main-menu">
    <a href="index.html">Trang chủ</a>
+	<a href="index (16).html">GIỚI THIỆU</a>
     <a href="index (3).html">Miền Bắc</a>
-    <a href="index (5).html">Miền Trung</a>
+    <a href="index (5).html">Miền Tây</a>
     <a href="index (4).html">Miền Nam</a>
     <a href="index (6).html">Phú Quốc</a>
 	<a href="index (8).html">Dịch vụ</a>
 	
 </nav>
-
 <div class="container main-content">
 
     <section class="posts">
@@ -332,7 +330,7 @@ $(document).ready(function(){
 </div>
 
 <footer class="site-footer">
-    <p>© 2026 Blog Du Lịch Việt Nam | Thiết kế cho Adobe Dreamweaver</p>
+    <p>© 2026 Blog Du Lịch Việt Nam |</p>
 	| Thiết kế :  Trương Thị Ngọc Ánh & Trịnh Như Ý       | Số liên hệ : 0884183976
 </footer>
 	<button id="topButton" onClick="scrollToTop()">Về Đầu</button>
@@ -341,15 +339,16 @@ $(document).ready(function(){
 </div>
 
 <!-- CHAT BOX -->
-<div class="chat-box" id="chatBox">
+<<div class="chat-box" id="chatBox">
     <div class="chat-header">
-        <span>CSKH Nụ Cười Mê Kông</span>
+        <span>DU LỊCH VIỆT NAM</span>
         <button onclick="toggleChat()">✕</button>
     </div>
 
     <div class="chat-welcome">
-        Xin chào quý khách. Rất vinh dự được phục vụ quý khách!
-    </div>
+        Xin chào quý khách. NHUY Rất vinh dự được phục vụ quý khách!
+  </div>
+
 
     <form class="chat-form">
         <label>Họ và Tên <span>*</span></label>
