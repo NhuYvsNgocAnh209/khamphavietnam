@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Đăng ký tài khoản - NGOC ANH | NHU Y</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#c9a24e",
+                        "brand-blue": "#1e4e8c",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-active { border-bottom: 2px solid #c9a24e; color: #c9a24e; font-weight: 600; }
+        .input-focus:focus { border-color: #c9a24e; ring-color: #c9a24e; }#toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #10b981;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center transition-colors duration-300">
+<button class="fixed top-6 right-6 p-2 rounded-full bg-white dark:bg-slate-800 shadow-md text-gray-600 dark:text-gray-300 hover:text-primary transition-all" onclick="toggleDarkMode()">
+<span class="material-icons" id="darkModeIcon">dark_mode</span>
+</button>
+<div class="w-full max-w-md p-4">
+<div class="bg-white dark:bg-slate-900 rounded-lg shadow-2xl overflow-hidden transition-colors duration-300 border border-gray-100 dark:border-slate-800">
+<div class="pt-10 pb-6 text-center">
+<h1 class="text-2xl font-bold tracking-tight">
+<span class="text-brand-blue dark:text-blue-400">NGOC ANH</span>
+<span class="text-gray-300 mx-2">|</span>
+<span class="text-primary">NHU Y</span>
+</h1>
+</div>
+<div class="flex border-b border-gray-100 dark:border-slate-800">
+<button class="flex-1 py-4 text-center text-gray-400 dark:text-gray-500 hover:text-gray-600 transition-colors">
+                   <a href="index (67).html"> Đăng nhập</a>
+                </button>
+<button class="flex-1 py-4 text-center tab-active">
+                    Đăng ký
+                </button>
+</div>
+<form class="p-8 space-y-6" id="registerForm" onsubmit="handleRegister(event)">
+<div class="space-y-1">
+<div class="relative">
+<input class="w-full px-4 py-3 border border-gray-200 dark:border-slate-700 bg-transparent dark:text-white rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-400" id="identifier" name="identifier" placeholder="Email / Số điện thoại" required="" type="text"/>
+</div>
+<p class="text-red-500 text-xs hidden" id="error-identifier">Vui lòng nhập Email @gmail.com hoặc Số điện thoại 10 chữ số hợp lệ.</p>
+</div>
+<div class="space-y-1">
+<div class="relative">
+<input class="w-full px-4 py-3 border border-gray-200 dark:border-slate-700 bg-transparent dark:text-white rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-400" id="password" name="password" placeholder="Mật khẩu" required="" type="password"/>
+</div>
+<p class="text-red-500 text-xs hidden" id="error-password">Mật khẩu phải từ 6 ký tự trở lên.</p>
+</div>
+<div class="space-y-1">
+<div class="relative">
+<input class="w-full px-4 py-3 border border-gray-200 dark:border-slate-700 bg-transparent dark:text-white rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-400" id="confirmPassword" name="confirmPassword" placeholder="Nhập lại mật khẩu" required="" type="password"/>
+</div>
+<p class="text-red-500 text-xs hidden" id="error-confirm">Mật khẩu xác nhận không khớp.</p>
+</div>
+<button class="w-full bg-primary hover:bg-[#b58e3e] active:scale-[0.98] text-white font-bold py-3.5 rounded transition-all shadow-lg shadow-primary/20 uppercase tracking-wide" type="submit">
+                    ĐĂNG KÝ
+                </button>
+<div class="text-center text-sm mt-4">
+<span class="text-gray-600 dark:text-gray-400">Đã có tài khoản?</span>
+<a class="text-brand-blue dark:text-blue-400 hover:underline font-medium ml-1" href="#">Đăng nhập ngay</a>
+</div>
+</form>
+</div>
+</div>
+<div id="toast">
+<div class="flex items-center gap-2">
+<span class="material-icons">check_circle</span>
+<span>Đăng ký thành công! Chào mừng bạn.</span>
+</div>
+</div>
+<script>
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('darkModeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.innerText = 'dark_mode';
+            } else {
+                html.classList.add('dark');
+                icon.innerText = 'light_mode';
+            }
+        }
+        function validateIdentifier(value) {
+            const emailRegex = /^[^\s@]+@gmail\.com$/;
+            const phoneRegex = /^[0-9]{10}$/;
+            return emailRegex.test(value) || phoneRegex.test(value);
+        }
+        function handleRegister(event) {
+            event.preventDefault();
+            const identifierInput = document.getElementById('identifier');
+            const passwordInput = document.getElementById('password');
+            const confirmInput = document.getElementById('confirmPassword');
+            const errId = document.getElementById('error-identifier');
+            const errPass = document.getElementById('error-password');
+            const errConf = document.getElementById('error-confirm');
+            let isValid = true;
+            // Validate Identifier (Gmail or 10-digit Phone)
+            if (!validateIdentifier(identifierInput.value)) {
+                errId.classList.remove('hidden');
+                identifierInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                errId.classList.add('hidden');
+                identifierInput.classList.remove('border-red-500');
+            }
+            // Validate Password Length
+            if (passwordInput.value.length < 6) {
+                errPass.classList.remove('hidden');
+                passwordInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                errPass.classList.add('hidden');
+                passwordInput.classList.remove('border-red-500');
+            }
+            // Validate Confirm Password
+            if (passwordInput.value !== confirmInput.value) {
+                errConf.classList.remove('hidden');
+                confirmInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                errConf.classList.add('hidden');
+                confirmInput.classList.remove('border-red-500');
+            }
+            if (isValid) {
+                showToast();
+                // Optionally reset form
+                // event.target.reset();
+            }
+        }
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+</body></html>

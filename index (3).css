@@ -36,7 +36,33 @@ body {
     padding: 15px;
     border-radius: 6px;
 }
-
+<style>
+.search-box{
+  text-align:center;
+  margin:20px 0;
+}
+.search-box input{
+  padding:8px;
+  width:250px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+.search-box button{
+  padding:8px 15px;
+  border:none;
+  background:#007bff;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+.search-box button:hover{
+  background:#0056b3;
+}
+.highlight{
+  background:yellow;
+  color:black;
+}
+</style>
 .filter label {
     display: block;
     margin-top: 15px;

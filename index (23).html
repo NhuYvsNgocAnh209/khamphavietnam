@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thanh Toán Tour - Du Lịch Việt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10b981", // Emerald 500
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .success-toast {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200">
+<div class="hidden fixed top-5 left-1/2 -translate-x-1/2 z-50 w-full max-w-md px-4" id="successNotification">
+<div class="bg-primary text-white p-4 rounded-lg shadow-2xl flex items-start space-x-3 success-toast">
+<span class="material-icons">check_circle</span>
+<div>
+<p class="font-bold text-lg">Đã đặt thành công!</p>
+<p class="text-sm opacity-90">Chúng tôi sẽ sớm liên hệ với bạn để xác nhận thông tin.</p>
+</div>
+<button class="ml-auto" onclick="closeNotification()">
+<span class="material-icons text-sm">close</span>
+</button>
+</div>
+</div>
+<main class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+<header class="text-center mb-12">
+<h1 class="text-4xl font-extrabold tracking-tight text-primary uppercase">
+                THANH TOÁN TOUR
+            </h1>
+<div class="h-1 w-24 bg-primary mx-auto mt-4 rounded-full"></div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<section class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex items-center space-x-2 mb-6">
+<span class="material-icons text-primary">person</span>
+<h2 class="text-xl font-bold">Thông tin khách hàng</h2>
+</div>
+<form class="space-y-5" id="bookingForm" onsubmit="return handleFormSubmit(event)">
+<div>
+<label class="block text-sm font-medium mb-1 text-slate-600 dark:text-slate-400" for="fullName">Họ và tên</label>
+<input class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 focus:ring-primary focus:border-primary" id="fullName" placeholder="Nhập họ và tên của bạn" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1 text-slate-600 dark:text-slate-400" for="phone">Số điện thoại</label>
+<input class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 focus:ring-primary focus:border-primary" id="phone" placeholder="Ví dụ: 0987654321" required="" type="tel"/>
+<p class="text-red-500 text-xs mt-1 hidden italic" id="phoneError">Số điện thoại phải bao gồm đúng 10 chữ số.</p>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1 text-slate-600 dark:text-slate-400" for="email">Email</label>
+<input class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 focus:ring-primary focus:border-primary" id="email" placeholder="example@gmail.com" required="" type="email"/>
+<p class="text-red-500 text-xs mt-1 hidden italic" id="emailError">Email phải kết thúc bằng @gmail.com</p>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1 text-slate-600 dark:text-slate-400" for="notes">Ghi chú</label>
+<textarea class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 focus:ring-primary focus:border-primary" id="notes" placeholder="Yêu cầu đặc biệt của bạn..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary hover:bg-emerald-600 text-white font-bold py-4 rounded-lg transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-emerald-500/20 uppercase tracking-wider flex justify-center items-center" type="submit">
+<span class="material-icons mr-2">check_circle_outline</span>
+                        Xác nhận đặt tour
+                    </button>
+</form>
+</section>
+<section class="space-y-6">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-icons text-slate-200 dark:text-slate-700 text-6xl">travel_explore</span>
+</div>
+<div class="flex items-center space-x-2 mb-6">
+<span class="material-icons text-primary">map</span>
+<h2 class="text-xl font-bold">Tour đã chọn</h2>
+</div>
+<div class="space-y-6 relative z-10">
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400 uppercase font-semibold tracking-wider mb-2">Tên tour</p>
+<h3 class="text-2xl font-bold leading-tight">Vinh - KĐT Kim Liên - Đồi Chè Thanh Chương</h3>
+</div>
+<div class="flex items-center space-x-4 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl border border-emerald-100 dark:border-emerald-800/50">
+<span class="material-icons text-primary text-3xl">payments</span>
+<div>
+<p class="text-sm text-slate-600 dark:text-slate-400">Tổng tiền thanh toán</p>
+<p class="text-3xl font-extrabold text-primary tracking-tight">750.000đ</p>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-700 pt-6">
+<h4 class="font-semibold mb-3 flex items-center">
+<span class="material-icons text-primary text-sm mr-2">info</span>
+                                Thông tin tour nhanh
+                            </h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li class="flex items-center"><span class="material-icons text-xs mr-2">event</span>Khởi hành: Hàng ngày</li>
+<li class="flex items-center"><span class="material-icons text-xs mr-2">schedule</span>Thời gian: 1 ngày</li>
+<li class="flex items-center"><span class="material-icons text-xs mr-2">place</span>Điểm đón: Trung tâm TP. Vinh</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl flex items-center justify-center space-x-6">
+<div class="flex items-center space-x-1 text-slate-500 text-xs">
+<span class="material-icons text-sm">security</span>
+<span>Thanh toán bảo mật</span>
+</div>
+<div class="flex items-center space-x-1 text-slate-500 text-xs">
+<span class="material-icons text-sm">verified_user</span>
+<span>Cam kết hoàn tiền</span>
+</div>
+</div>
+</section>
+</div>
+<button class="fixed bottom-6 right-6 p-3 bg-white dark:bg-slate-700 rounded-full shadow-lg border border-slate-200 dark:border-slate-600" onclick="toggleTheme()">
+<span class="material-icons" id="themeIcon">dark_mode</span>
+</button>
+</main>
+<script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.innerText = 'dark_mode';
+            } else {
+                html.classList.add('dark');
+                icon.innerText = 'light_mode';
+            }
+        }
+        function closeNotification() {
+            document.getElementById('successNotification').classList.add('hidden');
+        }
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const phoneError = document.getElementById('phoneError');
+            const emailError = document.getElementById('emailError');
+            let isValid = true;
+            // Phone validation (10 digits)
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                phoneError.classList.remove('hidden');
+                document.getElementById('phone').classList.add('border-red-500');
+                isValid = false;
+            } else {
+                phoneError.classList.add('hidden');
+                document.getElementById('phone').classList.remove('border-red-500');
+            }
+            // Email validation (@gmail.com)
+            if (!email.toLowerCase().endsWith('@gmail.com')) {
+                emailError.classList.remove('hidden');
+                document.getElementById('email').classList.add('border-red-500');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+                document.getElementById('email').classList.remove('border-red-500');
+            }
+            if (isValid) {
+                // Show notification
+                const notification = document.getElementById('successNotification');
+                notification.classList.remove('hidden');
+                // Clear form
+                document.getElementById('bookingForm').reset();
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    closeNotification();
+                }, 5000);
+            }
+            return false;
+        }
+        // Clean up errors as user types
+        document.getElementById('phone').addEventListener('input', function() {
+            this.classList.remove('border-red-500');
+            document.getElementById('phoneError').classList.add('hidden');
+        });
+        document.getElementById('email').addEventListener('input', function() {
+            this.classList.remove('border-red-500');
+            document.getElementById('emailError').classList.add('hidden');
+        });
+    </script>
+
+</body></html>
