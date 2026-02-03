@@ -323,7 +323,9 @@ body {
 .top-right a:hover {
     color: #2c8f77;
 }
-
+.main-menu a:hover {
+	color: #148341;
+}
 .hotline {
     margin-left: 15px;
     color: #2c8f77;

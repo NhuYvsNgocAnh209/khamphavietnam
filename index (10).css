@@ -8,6 +8,9 @@ body {
     margin: 0;
     background: #f5f5f5;
 }
+.main-menu a:hover {
+	color: #148341;
+}
 <style>
 .search-box{
   text-align:center;
